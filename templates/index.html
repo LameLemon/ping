@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+</head>
+<body>
+    <div id="services">
+        <h2>Services</h2>
+        {% for service in services %}
+            <div class="service">
+                <div class="info name">{{service[0]}}</div> 
+                <div class="info date">Last checked: {{service[1]}}</div> 
+                {% if service[2] %}
+                    <div class="status up">UP</div>
+                {% else %}
+                    <div class="status down">DOWN</div>
+                {% endif %}
+                </div>
+        {% endfor %}
+    </div>
+</body>
+<style>
+    .service {
+        border: solid;
+        min-width: 50%;
+        margin: .2rem;
+        padding: 0rem 0rem 0rem.5rem;
+        line-height: 2.5rem;
+    }
+    #services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .status {
+        float: right;
+        padding: 0rem .5rem;
+        min-width: 10%;
+        text-align: center;
+    }
+    .info {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+    }
+    .date {
+        color: #7d7d7d;
+        font-size: .9rem;
+    }
+    .up {
+        background-color: #7cff7c;
+    }
+    .down {
+        background-color: #ff7c7c;
+    }
+</style>
+</html>
