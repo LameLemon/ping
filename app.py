@@ -8,9 +8,11 @@ app = Flask(__name__)
 def home():
     db = Database("./ping.db")
     services = db.get_service_check()
-    services_date = []
+    services_date = {}
     for service in services:
-        services_date.append([
+        if not services_date.get(service[4], None):
+            services_date[service[4]] = []
+        services_date[service[4]].append([
             service[0],
             datetime.fromtimestamp(service[2]).strftime("%d/%m/%y %H:%M:%S"),
             service[3]

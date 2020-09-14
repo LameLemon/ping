@@ -7,19 +7,23 @@
 </head>
 <body>
     <div id="services">
-        <h2>Services</h2>
-        {% for service in services %}
-            <div class="service">
-                <div class="info name">{{service[0]}}</div> 
-                <div class="info date">Last checked: {{service[1]}}</div> 
-                {% if service[2] %}
-                    <div class="status up">UP</div>
-                {% else %}
-                    <div class="status down">DOWN</div>
-                {% endif %}
-                </div>
+        {% for category in services.keys() %}
+            <h2>{{ category }}</h2>
+            {% for service in services[category] %}
+
+                <div class="service">
+                    <div class="info name">{{service[0]}}</div>
+                    <div class="info date">Last checked: {{service[1]}}</div>
+                    {% if service[2] %}
+                        <div class="status up">UP</div>
+                    {% else %}
+                        <div class="status down">DOWN</div>
+                    {% endif %}
+                    </div>
+            {% endfor %}
         {% endfor %}
     </div>
+
 </body>
 <style>
     .service {

@@ -17,9 +17,3 @@ def http_check(url, status_code):
     print(r.status_code)
     return False
 
-check_loop()
-
-# db = Database("./ping.db")
-# db.insert_service("Incident pages", "https://api.helep0d.xyz/incidents/", 200)
-# db.insert_service("NoLockedThreads", "https://pesky.moe/NoLockedThreads/", 200)
-
