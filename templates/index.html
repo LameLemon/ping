@@ -30,7 +30,6 @@
         border: solid;
         min-width: 50%;
         margin: .2rem;
-        padding: 0rem 0rem 0rem.5rem;
         line-height: 2.5rem;
     }
     #services {
@@ -41,7 +40,6 @@
     }
     .status {
         float: right;
-        padding: 0rem .5rem;
         min-width: 10%;
         text-align: center;
     }
@@ -49,6 +47,7 @@
         display: inline-block;
         vertical-align: middle;
         line-height: normal;
+        margin: 0rem .5rem;
     }
     .date {
         color: #7d7d7d;
@@ -59,6 +58,15 @@
     }
     .down {
         background-color: #ff7c7c;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .status {
+            float: inherit;
+        }
+        .service {
+            width: 90%;
+        }
     }
 </style>
 </html>
